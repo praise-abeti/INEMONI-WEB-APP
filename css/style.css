@@ -247,6 +247,12 @@ Payment Options ~ Section ~ Styles
     display: grid;
     place-content: center;
 }
+@media (width <= 619px){
+.payments_container{
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    gap: 3rem 0;
+}
+}
 
 
 /* ============================================
@@ -258,9 +264,12 @@ Track Expense ~ Section ~ Styles
     justify-content: center;
     gap: 4rem 0;
 }
+.img_bg{
+    width: 100%;
+}
 .bg_purplePink{
     height: 42rem;
-    width: 42rem;
+    width: 100%;
     border-radius: 3.5rem;
     background: var(--clr-lighter-purple);
 }
@@ -284,6 +293,12 @@ Track Expense ~ Section ~ Styles
 .text_trackExpense > h1{
     font-size: 5rem;
     line-height: 6.3rem;
+}
+.img_bg{
+    width: fit-content;
+}
+.bg_purplePink{
+    width: 42rem;
 }
 }
 
@@ -327,12 +342,11 @@ Push Notifications  ~ Styles
     font-size: 3.8rem;
 }   
 }
-
 /* Mobile media query */
 @media (width <= 928px){
 .alerts_container{
     flex-direction: column;
-    gap: 0;
+    gap: 3rem 0;
 }
 .notification_card{
     width: 100%;
@@ -370,10 +384,11 @@ Sponsors Section ~ Styles
 .companies_container{
     display: grid;
     gap: 1rem 3rem;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    height: 20rem;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    height: fit-content;
     width: 50%;
     padding: 0 2rem;
+    overflow-y: hidden;
 }
 /* Media query */
 @media (width <= 920px){
@@ -382,6 +397,8 @@ Sponsors Section ~ Styles
 }
 .companies_container{
     width: 100%;
+    padding: 3rem 0 0 0;
+    gap: 2rem 1rem;
 }
 }
 
