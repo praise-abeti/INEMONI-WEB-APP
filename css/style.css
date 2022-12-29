@@ -122,10 +122,10 @@ NavBar ~ Styles
 .toggle_bar{
     display: none;
 }
-/* .desktop_lists li::before{
+.desktop_lists li::before{
     content: '';
     position: absolute;
-    height: 1px;
+    height: .7px;
     width: 0;
     background: var(--clr-dark-purple);
     translate: -50%;
@@ -135,7 +135,7 @@ NavBar ~ Styles
 }
 .desktop_lists li:hover::before{
     width: 9.5rem;
-} */
+}
 /* Hover card Pop pop colors */
 .footer_card{
     background: var(--clr-lighter-purple);
@@ -157,9 +157,9 @@ NavBar ~ Styles
 }
 /* Toggle ~ Bar */
 .toggle_bar{
-    --width: 4rem;
+    /* --width: 4rem; */
     height: 4.5rem;
-    width: var(--width);
+    width: 4rem;
     border: 0;
     outline: none;
     position: relative;
@@ -168,22 +168,19 @@ NavBar ~ Styles
 }
 .toggle_bar > .line{
     height: 2px;
-    width: var(--width);
+    width: 4rem;
     background: var(--clr-navy-blue);
     margin: 10px 0;
     top: 1rem;
 }
 /* Toggle Onclick */
-.toggle_bar.active > .line{
-    background: var(--clr-white);
-}
 .toggle_bar .line1,
 .toggle_bar .line3{
     width: 2.9rem; 
 }
 .toggle_bar.active .line1,
 .toggle_bar.active .line3{
-    width: var(--width);
+    width: 4rem;
 }
 .toggle_bar.active .line1{
     transform: rotate(45deg);
@@ -197,6 +194,12 @@ NavBar ~ Styles
     transform: rotate(-45deg);
     position: absolute;
 }
+}
+
+/* Mobile nav list */
+.container_dropdownC{
+    /* background: var(--clr-white); */
+    background: var(--clr-white);
 }
 
 
@@ -345,7 +348,7 @@ Push Notifications  ~ Styles
 /* Mobile media query */
 @media (width <= 928px){
 .alerts_container{
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 3rem 0;
 }
 .notification_card{
@@ -381,14 +384,23 @@ Sponsors Section ~ Styles
 .sponsors_container{
     align-items: center;
 }
+.companies_container::-webkit-scrollbar{
+    display: none;
+}
 .companies_container{
     display: grid;
+    place-content: center;
     gap: 1rem 3rem;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     height: fit-content;
     width: 50%;
     padding: 0 2rem;
     overflow-y: hidden;
+}
+.companies_container > .company{
+    height: 9rem;
+    display: grid;
+    place-content: center;
 }
 /* Media query */
 @media (width <= 920px){
@@ -397,8 +409,24 @@ Sponsors Section ~ Styles
 }
 .companies_container{
     width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     padding: 3rem 0 0 0;
-    gap: 2rem 1rem;
+    gap: 2rem 3rem;
+}
+}
+@media (width <= 573px){
+.companies_container{
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+}
+@media (width <= 397px){
+.companies_container{
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+}
+@media (width <= 384px){
+.companies_container{
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
 }
 }
 
@@ -455,5 +483,75 @@ Callout Section ~ Styles
 .callout > h1{
     font-size: 4rem;
     line-height: 4.7rem;
+}
+}
+
+
+/* ============================================
+Callout Section ~ Styles
+============================================ */
+.footer{
+    width: 100%;
+    height: fit-content;
+    background: var(--clr-white);
+    padding: 10rem 0;
+    position: relative;
+    bottom: 0;
+}
+.responsive_content.footer{
+    padding: 5rem 0 0 0;
+}
+.responsive_container.container_fter{
+    padding: 0;
+}
+.container_fter,
+.footer{
+    width: 100%;
+}
+.footer li:hover{
+    opacity: .7;
+}
+.rows_lists{
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    place-content: center;
+    gap: 5rem 1rem;
+}
+.rows_lists h4{
+    padding-bottom: .5rem;
+}
+.rows_lists li{
+    line-height: 4rem;
+}
+.footer_ftContainer{
+    margin: 5rem 0;
+}
+.footer_fter{
+    justify-content: space-between;
+    width: 100%;
+    border-top: 0.2px solid #C3C3C3;
+    padding: 1rem 0;
+    padding: 3rem 0;
+}
+.footer_fter > span{
+    gap: 0 1rem;
+}
+.foter_listItems{
+    gap: 0 3rem;
+}
+.container_Mfooter{
+    display: none;
+}
+
+@media (width <= 768px){
+.responsive_content.footer{
+    padding: 3rem 0 0 0;
+    margin: 0;
+}
+.container_fter{
+    display: none;
+}
+.container_Mfooter{
+    display: block;
 }
 }

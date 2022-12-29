@@ -349,11 +349,101 @@ h2{
 }
 }
 
+/* Drop down content List for Nav and footer ~ Mobile */
+@media (width >= 768px){
+.mobile_nav{
+    display: none;
+}
+}
+@media (width <= 768px){
+.mobile_nav{
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    translate: -100vw;
+    transition: 1.3s;
+    z-index: 999999999;
+}
+.mobile_nav.active{
+    translate: 0vw;
+}
+.mobile_nav.active .nav_toggle2{
+    animation: rotateNavClose 1s forwards;
+}
+.nav_toggle2{
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+    z-index: 9999;
+    border: 2px dotted #000;
+    padding: 1rem .6rem;
+}
+@keyframes rotateNavClose{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+.nav_toggle2.active > .line{
+    width: 2.3rem;
+    height: 1.3px;
+}
+/* Nav height and width */
+.container_dropdownC.navbar_container{
+    min-height: 100%;
+    width: 100%;
+    position: fixed;
+    inset: 0;
+    padding: 6rem 1rem;
+}
+/* Footer height and width */
+.container_dropdownC{
+    width: 100%;
+    padding: 1rem;
+}
+.footer_container.container_dropdownC{
+    bottom: 0;
+}
+.dropdown_title,
+.dropdown_items{
+    height: 7.35rem;
+}
+.dropdown_items > h4{
+    font-family: 'Cabinet Grotesk';
+}
+.dropdown_items{
+    border-bottom: 1.5px solid rgba(20, 20, 20, 0.05);
+    width: 100%;
+    overflow: hidden;
+}
+.dropdown_items.active .dropdown_title > i{
+    transform: rotate(180deg);
+}
+.dropdown_title{
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+}
+.dropdown_title > i{
+    font-size: 1.8rem;
+    transition: .3s cubic-bezier(0,0,.58,1.64);
+}
+.footer_nigeria{
+    width: 100%;
+    font-size: 1.6rem;
+}
+.footer_nigeria span{
+    padding: 5rem 0 3rem 0;
+    gap: 0 1rem;
+}
+}
+
 /* Nav List Hover */
 .nav_hover{
     width: 90rem;
     height: 60rem;
+    overflow: hidden;
     margin-inline: auto;
+    display: none;
 }
 .hover_container{
     padding: 5rem;
