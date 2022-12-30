@@ -1,0 +1,471 @@
+/* =======
+    Fonts 
+======= */
+/* Heading-Fonts  */
+/* !DM Serif Display Font */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
+/* Pargraph-Fonts  */
+@import url('https://fonts.cdnfonts.com/css/cabinet-grotesk');
+
+
+
+/* =======
+General styles
+======= */
+*,
+::after,
+::before{
+    padding: 0; 
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    /* 10PX = 1REM */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+ul{
+    list-style: none;
+}
+li{
+    font-family: 'Cabinet Grotesk';
+}
+a{
+    cursor: pointer;
+    font-family: 'Cabinet Grotesk';
+    text-decoration: none;
+}
+img,
+button{
+   user-select: none; 
+}
+/* Tags */
+.tag{
+    --height: 3.3rem;
+    height: var(--height);
+    width: 9rem;
+    font-size: 1.4rem;
+    border-radius: 4.4rem;
+    text-align: center;
+    line-height: var(--height);
+    font-weight: 500;
+}
+/* Media query for tags */
+@media (width <= 444px){
+.tag{
+    font-size: 1.1rem;
+}
+}
+@media (width <= 325px){
+.tag{
+    font-size: 1rem;
+}
+}
+@media (width <= 300px){
+.tag{
+    font-size: .9rem;
+}
+}
+
+.slider_reviews{
+    width: 53rem;
+    height: 38rem;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 2rem 5rem;
+    gap: 0 5rem;
+
+}
+.slider_reviews::-webkit-scrollbar{
+    display: none;
+}
+.card_reviews,
+.notification_card,
+.nav_hover{
+    border-radius: 2.4rem;
+    background: hsl(0, 0%, 100%);
+    box-shadow: 0px 4px 30px hsla(232, 59%, 10%, 0.04);
+}
+.card_reviews{
+    height: 15rem;
+    width: 50rem;
+    margin: 1rem;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    display: block;
+    padding: 3rem 4rem;
+    scroll-snap-align: center;
+}
+.card_reviews2{
+    transform: rotate(-7deg);
+}
+.card_reviews1{
+    transform: rotate(7deg);
+}
+.card_reviews > h4,
+.card_reviews > h5{
+    font-family: 'Cabinet Grotesk';
+}
+.card_reviews > h5{
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+}
+.card_reviews > h4{
+    font-size: 2rem;
+    line-height: 3.5rem;
+}
+/* Media query for card_reviews */
+@media (width <= 1200px){
+.card_reviews{
+    width: 45rem;
+    margin-inline: auto;
+}
+}
+.flx{
+    display: flex;
+}
+.grd{
+    display: grid;
+}
+/* Mobile media qeury for mobile */
+@media (width <= 446px){
+.slider_reviews{
+    width: 100%;
+    height: 43rem;
+}
+.card_reviews{
+    width: 35rem;
+    height: 17rem;
+}
+}
+@media (width <= 378px){
+.card_reviews{
+    width: 30rem;
+    height: 18rem;
+}
+}
+@media (width <= 343px){
+.slider_reviews{
+    height: fit-content;
+}
+.card_reviews{
+    width: 25rem;
+    height: fit-content;
+}
+}
+/* General Responsivenes */
+.responsive_content{
+    max-width: 100%;
+    padding: 2rem 0 3rem 0;
+}
+.responsive_container{
+    max-width: 100%;
+    padding: 0 1rem 5rem 1rem;
+    margin-inline: auto;
+    overflow-x: hidden;
+}
+/* Responsivenes Media query */
+/* Medium Screens */
+@media (width > 768px){
+.responsive_container{
+    max-width: 95%;
+}
+}
+/* Larger Screens */
+@media (width > 1104px){
+.responsive_container{
+    max-width: 80%;
+}
+}
+/* Televisions and xxLarge screens */
+@media (width > 1600px){
+html{
+    font-size: 70%;
+}
+.responsive_container{
+    max-width: 60%;
+}
+}
+/* Images draggables false */
+*{
+    -webkit-user-drag: none;
+}
+button{
+    cursor: pointer;
+    font-family: 'Cabinet Grotesk';
+}
+@keyframes bounce{
+    0%,100%{transform: scale(1);}
+    50%{transform: scale(1.2);}
+}
+.btn{
+    font-size: 1.8rem;
+    width: 15rem;
+    height: 5.2rem;
+    border-radius: 1rem;    
+    border: 0;
+    outline: 0;
+    text-transform: capitalize;
+    display: block;
+    margin: 2rem;
+    animation: bounce 4s infinite;
+    transition: .3s linear;
+}
+/* Transparent Btn -- Link btns */
+.btn_transprent{
+    transition: .3s linear;
+    font-size: 1.8rem;
+    background: transparent;
+    border: 0;
+}
+.btn_transprent img{
+    transition: margin .3s cubic-bezier(0,1.50,0,0.25);
+}
+.btn_transprent:hover img{
+    margin-left: 10px;
+}
+/* Btn media query */
+@media (width <= 768px){
+.btn{
+    height: 5rem;
+    width: 14rem;
+    font-size: 1.6rem;
+    margin: 1.5rem;
+}
+}
+@media (width <= 354px){
+.btn{
+    height: 4.5rem;
+    width: 10rem;
+    font-size: 1.2rem;
+}
+}
+/* Typographies */
+/* Heading Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: 'DM Serif Display';
+}
+h1{
+    font-size: 6rem;
+    line-height: 7.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+h2{
+    font-size: 5.9rem;
+    line-height: rem;
+}
+h3{
+    font-size: 2.4rem;
+    line-height: 3.8rem;
+}
+h4{
+    font-weight: 500;
+    font-size: 2.2rem;
+    line-height: 3.6rem;
+}
+li{
+    font-size: 2rem;
+    line-height: 3.4rem;
+}
+/* Paragraphs */
+p{
+    font-size: 2.2rem;
+    font-weight: 400;
+    font-family: 'Cabinet Grotesk';
+    line-height: 3.5rem;
+}
+
+@media (width <= 768px){
+h1{
+    font-size: 5rem;
+    line-height: 7.3rem;
+}
+h2{
+    font-size: 5.6rem;
+    line-height: rem;
+}
+h3{
+    font-size: 2.2rem;
+    line-height: 3.5rem;
+}
+h4{
+    font-size: 2rem;
+    line-height: 3.4rem;
+}
+li{
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+}
+p{
+    font-size: 2rem;
+    line-height: 3.2rem;
+}
+}
+/* Smaller Screens */
+@media (width < 427px){
+h1{
+    font-size: 4rem;
+    line-height: 5.8rem;
+}
+h2{
+    font-size: 3.8rem;
+    line-height: 5.3rem;
+}
+}
+/* Very Small screens */
+@media (width < 345px){
+h1{
+    font-size: 3.1rem;
+    line-height: 4.5rem;
+}
+h2{
+    font-size: 3rem;
+    line-height: 4.4rem;
+}
+p{
+    font-size: 1.8rem;
+    line-height: 3rem;
+}
+}
+@media (width < 290px){
+h1{
+    font-size: 2.9rem;
+}
+h2{
+    font-size: 2.9rem;
+}
+}
+
+/* Drop down content List for Nav and footer ~ Mobile */
+@media (width >= 768px){
+.mobile_nav{
+    display: none;
+}
+}
+@media (width <= 768px){
+.mobile_nav{
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    translate: -100vw;
+    transition: 1.3s;
+    z-index: 999999999;
+}
+.mobile_nav.active{
+    translate: 0vw;
+}
+.mobile_nav.active .nav_toggle2{
+    animation: rotateNavClose 1s forwards;
+}
+.nav_toggle2{
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+    z-index: 9999;
+    border: 2px dotted #000;
+    padding: 1rem .6rem;
+}
+@keyframes rotateNavClose{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+.nav_toggle2.active > .line{
+    width: 2.3rem;
+    height: 1.3px;
+}
+/* Nav height and width */
+.container_dropdownC.navbar_container{
+    min-height: 100%;
+    width: 100%;
+    position: fixed;
+    inset: 0;
+    padding: 6rem 1rem;
+}
+/* Footer height and width */
+.container_dropdownC{
+    width: 100%;
+    padding: 1rem;
+}
+.footer_container.container_dropdownC{
+    bottom: 0;
+}
+.dropdown_title,
+.dropdown_items{
+    height: 7.35rem;
+}
+.dropdown_items > h4{
+    font-family: 'Cabinet Grotesk';
+}
+.dropdown_items{
+    border-bottom: 1.5px solid rgba(20, 20, 20, 0.05);
+    width: 100%;
+    overflow: hidden;
+}
+.dropdown_items.active .dropdown_title > i{
+    transform: rotate(180deg);
+}
+.dropdown_title{
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+}
+.dropdown_title > i{
+    font-size: 1.8rem;
+    transition: .3s cubic-bezier(0,0,.58,1.64);
+}
+.footer_nigeria{
+    width: 100%;
+    font-size: 1.6rem;
+}
+.footer_nigeria span{
+    padding: 5rem 0 3rem 0;
+    gap: 0 1rem;
+}
+}
+
+/* Nav List Hover */
+.nav_hover{
+    width: 90rem;
+    height: 60rem;
+    overflow: hidden;
+    margin-inline: auto;
+    display: none;
+}
+.hover_container{
+    padding: 5rem;
+}
+.content_hover{
+    grid-template-columns: repeat(2, 1fr);
+    place-content: center;
+    gap: 5rem 0;
+}
+.content_hover > span{
+    width: 30.8rem;
+}
+.footer_hover{
+    width: 100%;
+    margin-top: 5rem;
+}
+.footer_card{
+    height: 14.9rem;
+    border-radius: 2.4rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 5rem 0 5rem;
+    margin-top: 3rem;
+}
